@@ -5,27 +5,41 @@
 .App-header {
   background-color: #9fcef4;
   height: 5vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: 0.70em;
   color: black;
 }
 
 .App-body {
+  
   background-color: #55a8ec;
+  
   height: 95vh;
+  margin: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .Names {
+    
+  }
+  
+  button {
+    padding: 0.5em;
+    border-radius: 0.35em;
+    background-color: #9fcef4;
+  }
+
 }
 
 .Hidden-img {
   width: 50vw;
   filter: brightness(0%);
 }
+
 
 .Shown-img {
   width: 50vw;
