@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.scss';
+import pokeball from './img/pokeball.png'
 
 function App() {
 
@@ -51,7 +52,9 @@ function App() {
     <div className="App">
       
       <header className="App-header">
+        <img className="Pokeball" src={pokeball} alt="ball" />
         <h1>Who's That Pokemon!</h1>
+        <img className="Pokeball" src={pokeball} alt="ball" />
       </header>
       
       {/*if we have enough pokemon*/}

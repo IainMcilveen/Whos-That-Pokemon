@@ -4,19 +4,28 @@
 
 .App-header {
   background-color: #9fcef4;
-  height: 5vh;
+  height: 10vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.70em;
   color: black;
+
+  h1 {
+    padding: 0.3em;
+  }
+
+  img {
+    width: 13vw;
+    max-width: 5.5em;
+  }
 }
 
 .App-body {
   
   background-color: #55a8ec;
-  height: 95vh;
+  height: 90vh;
   width: 100vw;
   margin: auto;
   display:flex;
@@ -38,6 +47,7 @@
   }
 
 }
+
 
 .Hidden-img {
   width: 65vw;
