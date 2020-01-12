@@ -5,8 +5,8 @@ function App() {
 
   const [pokemon,updatePokemon] = useState([]);
   const [correct,updateCorrect] = useState(null);
-  const [load,updateLoad] = useState(false);
-
+  const [load,updateLoad] = useState(false);  
+  
   async function getPokemon(){
     updateLoad(true);
     let num = 1;
@@ -47,7 +47,10 @@ function App() {
             <p>Pokemon #: {correct}</p>
           </div>
           <div className="Names">
-
+            <button>{pokemon[0].name}</button>
+            <button>{pokemon[1].name}</button>
+            <button>{pokemon[2].name}</button>
+            <button>{pokemon[3].name}</button>
           </div>
         </div>
       </body>}
