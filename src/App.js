@@ -7,12 +7,22 @@ function App() {
 
   return (
     <div className="App">
+      
       <header className="App-header">
         <h1>Pokemon Name Guesser</h1>
       </header>
+      
       <body className="App-body">
-        <p>body</p>
+        <div className="Body-contents">
+          <div className="Img">
+
+          </div>
+          <div className="Names">
+            
+          </div>
+        </div>
       </body>
+    
     </div>
   );
 }
