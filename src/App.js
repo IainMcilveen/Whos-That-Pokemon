@@ -3,12 +3,12 @@ import './App.css';
 
 function App() {
 
-  const [quiz,updateQuiz] = useState(null);
+  const [pokemon,updatePokemon] = useState([]);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Simple Quiz</h1>
+        <h1>Pokemon Name Guesser</h1>
       </header>
       <body className="App-body">
         <p>body</p>
