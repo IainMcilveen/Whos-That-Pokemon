@@ -51,6 +51,7 @@ function App() {
   return (
     <div className="App">
       
+      {/*render the header*/}
       <header className="App-header">
         <img className="Pokeball" src={pokeball} alt="ball" />
         <h1>Who's That Pokemon!</h1>
