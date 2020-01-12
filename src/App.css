@@ -22,4 +22,12 @@
   justify-content: center;
 }
 
+.Hidden-img {
+  width: 50vw;
+  filter: brightness(0%);
+}
+
+.Shown-img {
+  width: 50vw;
+}
 

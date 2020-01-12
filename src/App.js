@@ -6,8 +6,8 @@ function App() {
   const [pokemon,updatePokemon] = useState([]);
   const [correct,updateCorrect] = useState(null);
   const [load,updateLoad] = useState(false);  
-
   const [ans, ansUpdate] = useState(null);
+  const [fin, updateFin] = useState(true);
   
   async function getPokemon(){
     
@@ -15,6 +15,7 @@ function App() {
     updateCorrect(null);
     updateLoad(true);
     updatePokemon([]);
+    updateFin(false);
 
     let num = 1;
     let arrayOfPoke = [];
@@ -44,14 +45,14 @@ function App() {
     <div className="App">
       
       <header className="App-header">
-        <h1>Pokemon Name Guesser</h1>
+        <h1>Who's That Pokemon!</h1>
       </header>
       
       {/*if we have enough pokemon*/}
       {ans === null && pokemon.length === 4 && <body className="App-body">
         <div className="Body-contents">
           <div className="Img">
-            <p>Pokemon #: {correct}</p>
+            <img className="Hidden-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           </div>
           <div className="Names">
             <button onClick={() => ansUpdate(0)}>{pokemon[0].name}</button>
@@ -79,20 +80,24 @@ function App() {
         {console.log(ans)}
         {console.log(correct)}
         {ans === correct && ans !== null && <div className="Answer-div">
+          <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Correct!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
         </div>}
         {/* They guessed incorrectly */}
         {ans !== correct && ans !== null && <div className="Answer-div">
+          <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Wrong!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
         </div>}
         
-        <div className="Body-contents">
+        {/* if the quiz has been answered, give the option to reset */}
+        {fin && <div className="Body-contents">
           <button onClick={() => getPokemon()}>
             New Quiz
           </button>
-        </div>
+        </div>}
+
       </body>}
 
 
