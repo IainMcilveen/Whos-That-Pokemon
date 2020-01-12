@@ -3,19 +3,19 @@ import './App.css';
 
 function App() {
 
+  const [started,updateStarted] = useState(false);
   const [pokemon,updatePokemon] = useState([]);
-  const [correct,updateCorrect] = useState(null);
+  const [correct,updateCorrect] = useState(5);
   const [load,updateLoad] = useState(false);  
   const [ans, ansUpdate] = useState(null);
-  const [fin, updateFin] = useState(true);
   
   async function getPokemon(){
     
+    updateStarted(true);
     ansUpdate(null);
     updateCorrect(null);
     updateLoad(true);
     updatePokemon([]);
-    updateFin(false);
 
     let num = 1;
     let arrayOfPoke = [];
@@ -35,7 +35,6 @@ function App() {
       arrayOfPoke.push(data);
     }
 
-    console.log(arrayOfPoke);
     updateLoad(false);
     updatePokemon(arrayOfPoke);
 
@@ -77,22 +76,27 @@ function App() {
       {!load && <body className="App-body">
         
         {/* They guessed correctly */}
-        {console.log(ans)}
-        {console.log(correct)}
         {ans === correct && ans !== null && <div className="Answer-div">
           <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Correct!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
+          <button onClick={() => getPokemon()}>
+            New Quiz
+          </button>
         </div>}
+
         {/* They guessed incorrectly */}
         {ans !== correct && ans !== null && <div className="Answer-div">
           <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Wrong!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
+          <button onClick={() => getPokemon()}>
+            New Quiz
+          </button>
         </div>}
         
         {/* if the quiz has been answered, give the option to reset */}
-        {fin && <div className="Body-contents">
+        {!started && <div className="Body-contents">
           <button onClick={() => getPokemon()}>
             New Quiz
           </button>
@@ -100,8 +104,6 @@ function App() {
 
       </body>}
 
-
-    
     </div>
   );
 }
