@@ -4,12 +4,16 @@ import './App.css';
 function App() {
 
   const [pokemon,updatePokemon] = useState([]);
+  const [correct,updateCorrect] = useState(null);
   const [load,updateLoad] = useState(false);
 
   async function getPokemon(){
+    updateLoad(true);
     let num = 1;
     let arrayOfPoke = [];
     let response, data;
+
+    updateCorrect(Math.floor(Math.random()*4));
     
     for(let i = 0; i < 4; i++){
       num = Math.floor(Math.random() * 151) + 1;
@@ -24,6 +28,7 @@ function App() {
     }
 
     console.log(arrayOfPoke);
+    updateLoad(false);
     updatePokemon(arrayOfPoke);
 
   }
@@ -39,10 +44,19 @@ function App() {
       {pokemon.length === 4 && <body className="App-body">
         <div className="Body-contents">
           <div className="Img">
-            <p>img</p>
+            <p>Pokemon #: {correct}</p>
           </div>
           <div className="Names">
 
+          </div>
+        </div>
+      </body>}
+
+      {/*loading pokemon*/}
+      {load && <body className="App-body">
+        <div className="Body-contents">
+          <div className="load">
+            <h3>Loading Pokemon</h3>
           </div>
         </div>
       </body>}
