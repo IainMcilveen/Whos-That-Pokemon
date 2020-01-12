@@ -6,9 +6,16 @@ function App() {
   const [pokemon,updatePokemon] = useState([]);
   const [correct,updateCorrect] = useState(null);
   const [load,updateLoad] = useState(false);  
+
+  const [ans, ansUpdate] = useState(null);
   
   async function getPokemon(){
+    
+    ansUpdate(null);
+    updateCorrect(null);
     updateLoad(true);
+    updatePokemon([]);
+
     let num = 1;
     let arrayOfPoke = [];
     let response, data;
@@ -41,22 +48,23 @@ function App() {
       </header>
       
       {/*if we have enough pokemon*/}
-      {pokemon.length === 4 && <body className="App-body">
+      {ans === null && pokemon.length === 4 && <body className="App-body">
         <div className="Body-contents">
           <div className="Img">
             <p>Pokemon #: {correct}</p>
           </div>
           <div className="Names">
-            <button>{pokemon[0].name}</button>
-            <button>{pokemon[1].name}</button>
-            <button>{pokemon[2].name}</button>
-            <button>{pokemon[3].name}</button>
+            <button onClick={() => ansUpdate(0)}>{pokemon[0].name}</button>
+            <button onClick={() => ansUpdate(1)}>{pokemon[1].name}</button>
+            <button onClick={() => ansUpdate(2)}>{pokemon[2].name}</button>
+            <button onClick={() => ansUpdate(3)}>{pokemon[3].name}</button>
           </div>
         </div>
       </body>}
 
       {/*loading pokemon*/}
       {load && <body className="App-body">
+        
         <div className="Body-contents">
           <div className="load">
             <h3>Loading Pokemon</h3>
@@ -65,13 +73,27 @@ function App() {
       </body>}
 
       {/*get user to request a new quiz*/}
-      <body className="App-body">
+      {!load && <body className="App-body">
+        
+        {/* They guessed correctly */}
+        {console.log(ans)}
+        {console.log(correct)}
+        {ans === correct && ans !== null && <div className="Answer-div">
+          <h2>Correct!</h2>
+          <p>{pokemon[correct].name} was the correct pokemon</p>
+        </div>}
+        {/* They guessed incorrectly */}
+        {ans !== correct && ans !== null && <div className="Answer-div">
+          <h2>Wrong!</h2>
+          <p>{pokemon[correct].name} was the correct pokemon</p>
+        </div>}
+        
         <div className="Body-contents">
           <button onClick={() => getPokemon()}>
             New Quiz
           </button>
         </div>
-      </body>
+      </body>}
 
 
     
