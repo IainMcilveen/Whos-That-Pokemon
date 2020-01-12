@@ -90,9 +90,11 @@ function App() {
           <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Correct!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
-          <button onClick={() => getPokemon()}>
-            New Quiz
-          </button>
+          <div className="Button-div">
+            <button onClick={() => getPokemon()}>
+              New Quiz
+            </button>
+          </div>
         </div>}
 
         {/* They guessed incorrectly */}
@@ -101,9 +103,11 @@ function App() {
           <h2>Wrong!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
           <p>you guessed it was {pokemon[ans].name}</p>
-          <button onClick={() => getPokemon()}>
-            New Quiz
-          </button>
+          <div className="Button-div">
+            <button onClick={() => getPokemon()}>
+              New Quiz
+            </button>
+          </div>
         </div>}
         
         {/* if the quiz has been answered, give the option to reset */}

@@ -14,6 +14,8 @@
 
   h1 {
     padding: 0.3em;
+    font-size: 2.5em;
+    font-family: monospace; 
   }
 
   img {
@@ -32,17 +34,37 @@
   justify-content: center;
   align-items: center;
 
+  h2,p {
+    width: 95vw;
+    font-family: monospace; 
+    margin: 0.2em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.7em;
+  }
+
   .Body-contents {
     .Buttons-div{
       padding: 0.25em;
     }
   }
 
+  .Button-div{
+    padding-top: 0.5em;
+  }
+
   button {
-    padding: 1em;
+    padding: 0.75em;
     border-radius: 0.4em;
     width: 40vw;
     max-width: 18em;
+    font-size: 1.5em;
+    font-family: monospace; 
     background-color: #ffffff;
   }
 
