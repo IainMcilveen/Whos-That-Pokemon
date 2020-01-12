@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+
+  const [quiz,updateQuiz] = useState(null);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,9 +13,6 @@ function App() {
       <body className="App-body">
         <p>body</p>
       </body>
-      <footer className="App-footer">
-        <p>footer</p>
-      </footer>
     </div>
   );
 }
