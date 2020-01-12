@@ -61,10 +61,10 @@ function App() {
             <img className="Hidden-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           </div>
           <div className="Names">
-            <button onClick={() => ansUpdate(0)}>{pokemon[0].name}</button>
-            <button onClick={() => ansUpdate(1)}>{pokemon[1].name}</button>
-            <button onClick={() => ansUpdate(2)}>{pokemon[2].name}</button>
-            <button onClick={() => ansUpdate(3)}>{pokemon[3].name}</button>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(0)}>{pokemon[0].name}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(1)}>{pokemon[1].name}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(2)}>{pokemon[2].name}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(3)}>{pokemon[3].name}</button></div>
           </div>
         </div>
       </div>}
@@ -97,6 +97,7 @@ function App() {
           <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Wrong!</h2>
           <p>{pokemon[correct].name} was the correct pokemon</p>
+          <p>you guessed it was {pokemon[ans].name}</p>
           <button onClick={() => getPokemon()}>
             New Quiz
           </button>

@@ -16,19 +16,20 @@
 .App-body {
   
   background-color: #55a8ec;
-  
   height: 95vh;
+  width: 100vw;
   margin: auto;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  .Names {
-    
+  .Body-contents {
+    .Buttons-div{
+      padding: 0.25em;
+    }
   }
-  
+
   button {
-    padding: 0.5em;
+    padding: 1em;
     border-radius: 0.35em;
     background-color: #9fcef4;
   }
@@ -36,12 +37,14 @@
 }
 
 .Hidden-img {
-  width: 50vw;
+  width: 65vw;
+  max-width: 30em;
   filter: brightness(0%);
 }
 
 
 .Shown-img {
-  width: 50vw;
+  max-width: 30em;
+  width: 65vw;
 }
 
