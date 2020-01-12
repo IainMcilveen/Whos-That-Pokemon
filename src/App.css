@@ -3,18 +3,33 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #9fcef4;
   height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1em;
-  color: white;
+  color: black;
 }
 
 .App-body {
-  background-color: #482f44;
+  background-color: #55a8ec;
+  height: 80vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-footer {
+  background-color: #9fcef4;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: black;
 }
 
