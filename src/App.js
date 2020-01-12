@@ -65,10 +65,10 @@ function App() {
             <img className="Hidden-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           </div>
           <div className="Names">
-            <div className="Buttons-div"><button onClick={() => ansUpdate(0)}>{pokemon[0].name}</button></div>
-            <div className="Buttons-div"><button onClick={() => ansUpdate(1)}>{pokemon[1].name}</button></div>
-            <div className="Buttons-div"><button onClick={() => ansUpdate(2)}>{pokemon[2].name}</button></div>
-            <div className="Buttons-div"><button onClick={() => ansUpdate(3)}>{pokemon[3].name}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(0)}>{pokemon[0].name.charAt(0).toUpperCase()+pokemon[0].name.slice(1)}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(1)}>{pokemon[1].name.charAt(0).toUpperCase()+pokemon[1].name.slice(1)}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(2)}>{pokemon[2].name.charAt(0).toUpperCase()+pokemon[2].name.slice(1)}</button></div>
+            <div className="Buttons-div"><button onClick={() => ansUpdate(3)}>{pokemon[3].name.charAt(0).toUpperCase()+pokemon[3].name.slice(1)}</button></div>
           </div>
         </div>
       </div>}
@@ -90,7 +90,7 @@ function App() {
         {ans === correct && ans !== null && <div className="Answer-div">
           <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Correct!</h2>
-          <p>{pokemon[correct].name} was the correct pokemon</p>
+          <p>{pokemon[correct].name.charAt(0).toUpperCase()+pokemon[correct].name.slice(1)} was the correct pokemon</p>
           <div className="Button-div">
             <button onClick={() => getPokemon()}>
               New Quiz
@@ -102,8 +102,8 @@ function App() {
         {ans !== correct && ans !== null && <div className="Answer-div">
           <img className="Shown-img" src={pokemon[correct].sprites.front_default} alt="xd" />
           <h2>Wrong!</h2>
-          <p>{pokemon[correct].name} was the correct pokemon</p>
-          <p>you guessed it was {pokemon[ans].name}</p>
+          <p>{pokemon[correct].name.charAt(0).toUpperCase()+pokemon[correct].name.slice(1)} was the correct pokemon</p>
+          <p>you guessed it was {pokemon[ans].name.charAt(0).toUpperCase()+pokemon[ans].name.slice(1)}</p>
           <div className="Button-div">
             <button onClick={() => getPokemon()}>
               New Quiz
